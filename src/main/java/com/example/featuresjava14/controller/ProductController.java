@@ -1,5 +1,6 @@
 package com.example.featuresjava14.controller;
 
+import com.example.featuresjava14.config.SwaggerConfig;
 import com.example.featuresjava14.enumerate.ProductStatus;
 import com.example.featuresjava14.model.Product;
 import com.example.featuresjava14.records.ProductDTO;
@@ -7,6 +8,7 @@ import com.example.featuresjava14.records.ProductRecord;
 import com.example.featuresjava14.repository.ProductRepository;
 import com.example.featuresjava14.service.ProductService;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
+@Api(tags = SwaggerConfig.PRODUCTS_API_TAG)
 public class ProductController {
 
     private final ProductRepository productRepository;
